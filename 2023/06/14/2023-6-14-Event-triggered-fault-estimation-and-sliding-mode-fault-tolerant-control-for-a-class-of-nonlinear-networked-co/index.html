@@ -1,0 +1,476 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Event-triggered fault estimation and sliding mode fault-tolerant control for a class of nonlinear networked control systems | ap的小站🥝</title><meta name="author" content="ap"><meta name="copyright" content="ap"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="一类非线性网络控制系统的事件触发故障估计与滑模容错控制摘要本文研究了一类具有执行器故障和扰动的离散时间Lipschtiz非线性网络控制系统的事件触发故障估计和滑模容错控制问题。  首先，设计一个事件触发的故障&#x2F;状态观测器，用于实时估计系统状态和执行器故障。  再在状态估计空间中构造离散时间滑动曲面： 利用重新表述的Lipschitz性质和延迟系统分析方法，考虑事件触发方案、执行器故障、外">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Event-triggered fault estimation and sliding mode fault-tolerant control for a class of nonlinear networked control systems">
+<meta property="og:url" content="http://pqueen.top/2023/06/14/2023-6-14-Event-triggered-fault-estimation-and-sliding-mode-fault-tolerant-control-for-a-class-of-nonlinear-networked-co/index.html">
+<meta property="og:site_name" content="ap的小站🥝">
+<meta property="og:description" content="一类非线性网络控制系统的事件触发故障估计与滑模容错控制摘要本文研究了一类具有执行器故障和扰动的离散时间Lipschtiz非线性网络控制系统的事件触发故障估计和滑模容错控制问题。  首先，设计一个事件触发的故障&#x2F;状态观测器，用于实时估计系统状态和执行器故障。  再在状态估计空间中构造离散时间滑动曲面： 利用重新表述的Lipschitz性质和延迟系统分析方法，考虑事件触发方案、执行器故障、外">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/img/f6.webp">
+<meta property="article:published_time" content="2023-06-13T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-06-13T16:00:00.000Z">
+<meta property="article:author" content="ap">
+<meta property="article:tag" content="研0暑期">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/img/f6.webp"><link rel="shortcut icon" href="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/img/tb3.png"><link rel="canonical" href="http://pqueen.top/2023/06/14/2023-6-14-Event-triggered-fault-estimation-and-sliding-mode-fault-tolerant-control-for-a-class-of-nonlinear-networked-co/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-right"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Event-triggered fault estimation and sliding mode fault-tolerant control for a class of nonlinear networked control systems',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-06-14 00:00:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const now = new Date()
+          const hour = now.getHours()
+          const isNight = hour <= 6 || hour >= 18
+          if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+          else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/a.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://blog-1318446803.cos.ap-nanjing.myqcloud.com/img/f6.webp')"><nav id="nav"><span id="blog-info"><a href="/" title="ap的小站🥝"><span class="site-name">ap的小站🥝</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Event-triggered fault estimation and sliding mode fault-tolerant control for a class of nonlinear networked control systems</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-06-13T16:00:00.000Z" title="发表于 2023-06-14 00:00:00">2023-06-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-06-13T16:00:00.000Z" title="更新于 2023-06-14 00:00:00">2023-06-14</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>9分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Event-triggered fault estimation and sliding mode fault-tolerant control for a class of nonlinear networked control systems"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="一类非线性网络控制系统的事件触发故障估计与滑模容错控制"><a href="#一类非线性网络控制系统的事件触发故障估计与滑模容错控制" class="headerlink" title="一类非线性网络控制系统的事件触发故障估计与滑模容错控制"></a>一类非线性网络控制系统的事件触发故障估计与滑模容错控制</h1><h2 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h2><p>本文研究了一类具有<strong>执行器故障和扰动</strong>的<strong>离散时间Lipschtiz非线性网络控制系统</strong>的<strong>事件触发故障估计和滑模容错控制</strong>问题。</p>
+<ol>
+<li><p>首先，设计一个<strong>事件触发的故障&#x2F;状态观测器</strong>，用于实时估计系统状态和执行器故障。</p>
+</li>
+<li><p>再在<strong>状态估计空间</strong>中构造<strong>离散时间滑动曲面</strong>：</p>
+<p>利用<strong>重新表述的Lipschitz性质和延迟系统分析方法</strong>，考虑<em>事件触发方案、执行器故障、外部干扰和网络诱导延迟</em>，将<em><strong>滑模动力学和状态&#x2F;故障误差动力学</strong></em>转换为<em><strong>统一的线性变参数(LPV)网络系统模型</strong></em>。在此模型的基础上，借助于<em>Lyapunov-Krasovskii泛函</em>方法，导出保证<strong>具有规定H∞性能</strong>的闭环系统的稳定性的<strong>时滞相关充分条件</strong>。</p>
+</li>
+<li><p>综合一种基于观测的滑模FTC(容错控制)定律，保障滑动表面的可达性</p>
+</li>
+<li><p>仿真分析</p>
+</li>
+</ol>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>背景：传输延迟、<strong>有线通信资源</strong>、丢包，要开发一种既能<strong>降低降低通信负载</strong>且<strong>保证闭环系统稳定性和性能</strong>的传输方案。</p>
+<p>— ETC（event-triggered control）方案：在保证系统稳定性和预期性能的同时，节省有限的通信和计算资源</p>
+<p>传统<strong>时间触发策略</strong>：数据包在固定的采样周期内传输</p>
+<p>ETC策略的优势在于，只有当违反(或满足，取决于规定的阈值)事件触发条件时，数据包才会在网络上进行传输</p>
+<p>FTC可分为两种主要方法：被动与主动</p>
+<ul>
+<li>被动FTC (PFTC)方法：将故障视为<strong>不确定性的附加形式</strong>，具有<strong>固定结构的控制器</strong>，但当发生的系统故障超<strong>出规定的故障集</strong>时，其性能不能始终得到保证</li>
+<li>主动故障检测(AFTC)方法：主要基于<strong>故障检测和隔离(FDI)或估计</strong>来<strong>补偿</strong>已发生的故障，从而保证系统的预期性能</li>
+</ul>
+<p>​      FDI可以指示系统故障的发生并确定故障类型，但不易获得准确的<strong>故障类型</strong>、<strong>幅值</strong>等信息</p>
+<p><em><strong>故障估计(FE)技术</strong></em> —估计故障的类型与幅值。在这种方法中，利用<strong>估计的故障信号</strong>，可以<strong>构造一个容错控制器</strong>来<strong>补偿故障的影响</strong></p>
+<p>滑模控制：对不确定性、非线性和外部干扰的鲁棒性</p>
+<p>本文针对<strong>时变时滞</strong>、<strong>附加执行器故障</strong>和<strong>外部干扰</strong>的<strong>离散Lipschitz非线性网络控制系统</strong>，提出了一种<strong>事件触发故障估计与滑模滑模容错控制</strong>的集成设计框架。</p>
+<p>本文主要研究内容：</p>
+<ol>
+<li>采用<strong>事件触发方案</strong>节省有限的网络资源；设计<strong>事件触发状态&#x2F;故障观测器</strong>，在受网络延迟影响的情况下同时估计系统状态和执行器故障</li>
+<li>借助于<strong>重新表述的Lipschitz性质</strong>和<strong>延迟系统分析方法</strong>，将滑模动力学和状态&#x2F;故障误差动力学转化为<strong>统一的LPV网络系统模型</strong></li>
+<li>基于<strong>Lyapunov-Krasovskii泛函</strong>方法，利用<strong>线性矩阵不等式</strong>(LMI)公式，通过<strong>H∞优化</strong>得到闭环系统的稳定性和性能分析的充分条件</li>
+<li>考虑<strong>事件触发方法</strong>，设计了一种<strong>基于观测</strong>的<em><strong>离散时间滑模FTC律</strong></em>，以保证滑动面的可达性</li>
+</ol>
+<p>符号：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151413087.png" alt="image-20230615141316981" style="zoom:67%;" />：表示正整数集；</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151415950.png" alt="image-20230615141519919" style="zoom:67%;" />：<em>n</em> 维欧几里得空间</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151415243.png" alt="image-20230615141556214" style="zoom:67%;" />：<em>n × m</em> 个实矩阵集合</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151418153.png" alt="image-20230615141800126" style="zoom:67%;" />：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151418759.png" alt="image-20230615141840729" style="zoom:67%;" /></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151419280.png" alt="image-20230615141940253" style="zoom:67%;" />：对角块矩阵</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151420229.png" alt="image-20230615142028200" style="zoom:67%;" />：对称分块矩阵中的对称项</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151421674.png" alt="image-20230615142108648" style="zoom:67%;" />：<em>n × n</em> 单位矩阵</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151422318.png" alt="image-20230615142224289" style="zoom:67%;" />：矩阵<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151423131.png" alt="image-20230615142305103" style="zoom:67%;" />对称正定(半正定)</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151424024.png" alt="image-20230615142458998" style="zoom:67%;" />由<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151425002.png" alt="image-20230615142525951" style="zoom:67%;" />确定准则</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151428652.png" alt="image-20230615142800625" style="zoom:67%;" /> 
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151428841.png" alt="image-20230615142857812" style="zoom:67%;" />为<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151429616.png" alt="image-20230615142948586" style="zoom:67%;" />的正则基的向量</p>
+<h3 id="问题构建"><a href="#问题构建" class="headerlink" title="问题构建"></a>问题构建</h3><h4 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h4><p>离散时间非线性模型：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151503065.png" alt="image-20230615150313036" style="zoom:67%;" />
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151504974.png" alt="image-20230615150459948" style="zoom:67%;" />：系统状态向量</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151505402.png" alt="image-20230615150553373" style="zoom:67%;" />：控制输入</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151506524.png" alt="image-20230615150619485" style="zoom:67%;" />：测量输出向量</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151507019.png" alt="image-20230615150716996" style="zoom:67%;" />：附加执行器故障</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151507006.png" alt="image-20230615150757963" style="zoom:67%;" />：属于<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151508002.png" alt="image-20230615150855973" style="zoom:67%;" />的外部扰动</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151511428.png" alt="image-20230615151156403" style="zoom:67%;" />为具有适当维数的常数矩阵</p>
+<p><strong>Assumption 1.</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151513143.png" alt="image-20230615151344117" style="zoom:67%;" />可控，<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151515928.png" alt="image-20230615151506898" style="zoom:67%;" />可观察，<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151515967.png" alt="image-20230615151539939" style="zoom:67%;" /></p>
+<p><strong>Assumption 2 .</strong></p>
+<p>附加执行器故障<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151507019.png" alt="image-20230615150716996" style="zoom:67%;" />满足：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151516207.png" alt="image-20230615151655179" style="zoom:67%;" />
+
+<p><strong>Assumption 3 .</strong></p>
+<p>非线性函数<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151518694.png" alt="image-20230615151837667" style="zoom:67%;" />已知，且满足<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151520326.png" alt="image-20230615152040296" style="zoom: 67%;" />条件，即：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151519925.png" alt="image-20230615151904899" style="zoom:67%;" /></p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151521017.png" alt="image-20230615152144976" style="zoom:67%;" /> 
+
+<p>利普希茨常数<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151523307.png" alt="image-20230615152318280" style="zoom:67%;" />与<em><strong>x</strong></em> 和<em><strong>k</strong></em> 无关</p>
+<p><strong>Lemma 1.</strong></p>
+<p>考虑一个函数<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151528191.png" alt="image-20230615152834161" style="zoom:67%;" />，以下两项等价</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151532374.png" alt="image-20230615153259327" style="zoom:67%;" />
+
+
+
+<h4 id="事件检测器"><a href="#事件检测器" class="headerlink" title="事件检测器"></a>事件检测器</h4><p>为减少对有限通信资源的利用，使用图所示的<strong>事件检测器</strong>来确定是否应该<strong>释放新的测量输出</strong>并<strong>通过网络传输到零阶保持器</strong></p>
+<p><strong>基于事件触发故障估计的网络容错系统：</strong></p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151534844.png" alt="image-20230615153454776" style="zoom:67%;" />
+
+<p>将当前的测量输出表示为<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151552037.png" alt="image-20230615155251011" style="zoom:67%;" />，且最新发布的为：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="C:/Users/23972/AppData/Roaming/Typora/typora-user-images/image-20230615155705763.png" alt="image-20230615155705763" style="zoom:67%;" /></p>
+<p><strong>当<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151558682.png" alt="image-20230615155844656" style="zoom:67%;" />满足以下条件</strong>：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151614918.png" alt="image-20230615161427889" style="zoom:67%;" />
+
+<p>其中，<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151615119.png" alt="image-20230615161519086" style="zoom:67%;" />，<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151616794.png" alt="image-20230615161629769" style="zoom:67%;" />为待设计的权重矩阵，<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151617483.png" alt="image-20230615161700453" style="zoom:67%;" />为根据实际情况的给定参数。假设初始测量输出<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151619949.png" alt="image-20230615161906918" style="zoom:67%;" />成功发布，则事件检测器的下一个发布时间瞬间<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151620197.png" alt="image-20230615162051165" style="zoom:67%;" />可表示为：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151622490.png" alt="image-20230615162200456" style="zoom:67%;" /></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151623894.png" alt="image-20230615162306870" style="zoom:67%;" />表示当前传输时间瞬间，<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151620197.png" alt="image-20230615162051165" style="zoom:67%;" />表示下一传输时间瞬间，则在<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151631988.png" alt="image-20230615163134951" style="zoom:67%;" />时，随后的采样输出将不被传输。此外，<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152012506.png" alt="image-20230615201246466" style="zoom:67%;" />满足：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152013542.png" alt="image-20230615201324508" style="zoom:67%;" />     <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152013204.png" alt="image-20230615201346168" style="zoom:67%;" /></p>
+<p><strong>使用事件触发条件(4)恢复网络传输</strong>。</p>
+<p>也就是说，只有<strong>部分采样输出</strong>通过通信网络传输到ZOH。事件**触发方案(4)**可以有效地减少数据传输次数，节省有限的网络资源。</p>
+<h4 id="网络与ZOH"><a href="#网络与ZOH" class="headerlink" title="网络与ZOH"></a>网络与<em>ZOH</em></h4><p>本文中，假设采样后的输出以<strong>单包传输</strong>，且<strong>在数据传输过程中不丢包</strong>，因此<strong>只考虑了网络延迟</strong>对系统的影响。</p>
+<p>假设<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151645251.png" alt="image-20230615164539213" style="zoom:67%;" />表示传感器与控制器之间的第 <em><strong>i</strong></em> 个发布瞬间的延迟(即<strong>从事件探测器到ZOH的延迟</strong>)，<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151648775.png" alt="image-20230615164844741" style="zoom:67%;" />，<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151649197.png" alt="image-20230615164910165" style="zoom:67%;" />，<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306151649314.png" alt="image-20230615164950284" style="zoom:67%;" />，且为正整数</p>
+<p>传感器输出<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152001170.png" alt="image-20230615200122137" style="zoom:67%;" />将在瞬间<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152003799.png" alt="image-20230615200311768" style="zoom:67%;" />分别到达基于观测器的滑模控制器。</p>
+<p>根据延时系统分析方法考虑以下条件: (本文使用该方法考虑”乱序“问题)</p>
+<p>**case(1)**若<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152016066.png" alt="image-20230615201614040" style="zoom:67%;" />，定义函数</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152016635.png" alt="image-20230615201644608" style="zoom:67%;" />
+
+<p>则<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152017915.png" alt="image-20230615201710888" style="zoom:67%;" /></p>
+<p>**case(2)**若<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152017779.png" alt="image-20230615201756752" style="zoom:67%;" />，考虑以下区间：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152019964.png" alt="image-20230615201907929" style="zoom:67%;" />
+
+<p>由于<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152019729.png" alt="image-20230615201946705" style="zoom:67%;" />，可看出存在<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152020900.png" alt="image-20230615202043872" style="zoom:67%;" />使得</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152021264.png" alt="image-20230615202110239" style="zoom:67%;" />
+
+<p>因此，<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152025017.png" alt="image-20230615202505990" style="zoom:67%;" />满足(6)。</p>
+<p>取<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152034062.png" alt="image-20230615203433945" style="zoom:67%;" /></p>
+<p>其中<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152034847.png" alt="image-20230615203458817" style="zoom:67%;" /></p>
+<p>则有区间满足:</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152035585.png" alt="image-20230615203547561" style="zoom:67%;" />                   <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152036991.png" alt="image-20230615203631960" style="zoom:67%;" /></p>
+<p><strong>eg：</strong></p>
+<p>定义</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152056249.png" alt="image-20230615205612220" style="zoom:67%;" />           <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152056470.png" alt="image-20230615205639444" style="zoom:67%;" /></p>
+<p>显然：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152058663.png" alt="image-20230615205803635" style="zoom:67%;" />       <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152058138.png" alt="image-20230615205825106" style="zoom:67%;" />        </p>
+<p>因此有：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152100064.png" alt="image-20230615210015027" style="zoom:67%;" /> 
+
+<p>对于<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152105767.png" alt="image-20230615210518731" style="zoom:67%;" />：</p>
+<p>在**case(1)**：定义<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152107818.png" alt="image-20230615210704793" style="zoom:67%;" />；</p>
+<p>在**case(2)**：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152108087.png" alt="image-20230615210809059" style="zoom:67%;" />      <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152108568.png" alt="image-20230615210840538" style="zoom:67%;" />   </p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152051051.png" alt="image-20230615205122935" style="zoom:67%;" />
+
+<p>基于(14)和事件触发条件(4)可知，对于<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152105767.png" alt="image-20230615210518731" style="zoom:67%;" /></p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152115029.png" alt="image-20230615211554995" style="zoom:67%;" /> 
+
+<p>则观测器的输入信号<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152118715.png" alt="image-20230615211820689" style="zoom:67%;" />可写为：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152119830.png" alt="image-20230615211913801" style="zoom:67%;" /> 
+
+<p>因此，易知在 <em><strong>ZOH</strong></em> 处接收到的信号等于事件探测器在瞬间<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152122315.png" alt="image-20230615212205283" style="zoom:67%;" />发布的信号</p>
+<p>假设 <strong><em>ZOH</em> 是事件驱动</strong>的，它使用<strong>最新的采样输出</strong>并保持直至下一个采样数据到达。也就是说，信号<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152118715.png" alt="image-20230615211820689" style="zoom:67%;" />为分段常数，但从右边开始是连续的。</p>
+<h3 id="主要结果"><a href="#主要结果" class="headerlink" title="主要结果"></a>主要结果</h3><p><em><strong>Lemma 2：</strong></em></p>
+<p>对于给定正定对称矩阵<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152136784.png" alt="image-20230615213618752" style="zoom:67%;" />，任意在<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152137215.png" alt="image-20230615213716184" style="zoom:67%;" />的离散时间变量序列<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152137121.png" alt="image-20230615213758089" style="zoom:67%;" />，整数<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152138280.png" alt="image-20230615213815248" style="zoom:67%;" />，下列不等式恒成立：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152139877.png" alt="image-20230615213918843" style="zoom:67%;" />
+
+<p>其中<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152140585.png" alt="image-20230615214030561" style="zoom:67%;" /></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152140478.png" alt="image-20230615214053443" style="zoom:67%;" /><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152141728.png" alt="image-20230615214112697" style="zoom:67%;" /></p>
+<p><em><strong>Lemma 3：</strong></em>(<em>Reciprocally convex approach</em>)</p>
+<p>给定两个正整数<em><strong>n、 m</strong></em>，两个正定对称矩阵<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152148046.png" alt="image-20230615214820007" style="zoom:67%;" />，若存在一个矩阵<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152148989.png" alt="image-20230615214852954" style="zoom:67%;" />使得<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152149923.png" alt="image-20230615214919891" style="zoom:67%;" />，则对于任意标量<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152150136.png" alt="image-20230615215007102" style="zoom:67%;" />，下列不等式恒成立：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152150332.png" alt="image-20230615215040303" style="zoom:67%;" /> 
+
+
+
+<p><em><strong>Lemma 4：</strong></em></p>
+<p>给定具有适当维数的矩阵<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152151260.png" alt="image-20230615215134231" style="zoom: 67%;" />，下列不等式恒成立：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152152027.png" alt="image-20230615215220999" style="zoom:67%;" /> 
+
+<p><em><strong>Lemma 5：</strong></em></p>
+<p>给定正定对称矩阵<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152153023.png" alt="image-20230615215318997" style="zoom:67%;" />和和矩阵<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152153627.png" alt="image-20230615215346600" style="zoom:67%;" /> 若下列条件成立：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152154767.png" alt="image-20230615215431737" style="zoom: 67%;" />
+
+<p>则有：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152155732.png" alt="image-20230615215502705" style="zoom:67%;" />
+
+<p>​    <strong>证明：</strong></p>
+<p>对于任意正定对称矩阵 <em><strong>P</strong></em> 和矩阵 <em><strong>X</strong></em> ，有<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152156340.png" alt="image-20230615215641310" style="zoom:67%;" /><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152157867.png" alt="image-20230615215708824" style="zoom:67%;" /> 即有<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152158187.png" alt="image-20230615215808153" style="zoom:67%;" /></p>
+<p>由(18)可得：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152200788.png" alt="image-20230615220031758" style="zoom:67%;" />
+
+<p>将(20)分别<strong>前乘和后乘</strong><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152205760.png" alt="image-20230615220533740" style="zoom:67%;" />及其转置，再通过Schur补则可以得到不等式(19)。</p>
+<p>在本节中，首先设计一个<strong>故障&#x2F;状态观测器</strong>来同时估计<strong>系统状态和执行器故障</strong>。</p>
+<p>然后利用<strong>估计的状态</strong>构造<strong>离散时间滑动曲面</strong>，此外还得到了保证<strong>整个NCS</strong>在<strong>规定的H∞性能下稳定</strong>的充分条件。</p>
+<p>最后，根据测量和估计的故障&#x2F;状态，<strong>设计滑模FTC律</strong>以<strong>确保离散时间滑模可达</strong>。</p>
+<h4 id="故障-x2F-状态观测器设计"><a href="#故障-x2F-状态观测器设计" class="headerlink" title="故障&#x2F;状态观测器设计"></a>故障&#x2F;状态观测器设计</h4><p>基于输入信号<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152118715.png" alt="image-20230615211820689" style="zoom:67%;" />设计如下形式<strong>故障&#x2F;状态观测器</strong>：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152246321.png" alt="image-20230615224640281" style="zoom:67%;" />
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152247370.png" alt="image-20230615224723339" style="zoom:67%;" />为估计的状态向量，<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152303710.png" alt="image-20230615230347680" style="zoom:67%;" />为估计的故障向量</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152304100.png" alt="image-20230615230440072" style="zoom:67%;" />为初始条件，<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152305333.png" alt="image-20230615230528295" style="zoom:67%;" />为待设计的观测器增益</p>
+<p>估计误差表示：<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152307915.png" alt="image-20230615230757885" style="zoom:67%;" /></p>
+<p>基于(16)，观测器(21)的动力学方程可以重新表述为：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152309083.png" alt="image-20230615230923044" style="zoom:67%;" />
+
+<p>基于(1)与(22)，状态&#x2F;故障估计误差的动力学方程为：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152319581.png" alt="image-20230615231927544" style="zoom:67%;" />
+
+<p>其中<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152319377.png" alt="image-20230615231949343" style="zoom:67%;" /></p>
+<p><strong>注3</strong>：对于观测器设计和控制更新，假设延迟的<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152325259.png" alt="image-20230615232545224" style="zoom:67%;" />和<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152326668.png" alt="image-20230615232618634" style="zoom:67%;" />均可测。</p>
+<h4 id="滑动面设计"><a href="#滑动面设计" class="headerlink" title="滑动面设计"></a>滑动面设计</h4><p>考虑如下离散时间滑动面函数：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152334531.png" alt="image-20230615233440495" style="zoom:67%;" />
+
+<p>其中<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152343048.png" alt="image-20230615234311017" style="zoom:67%;" /></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152343633.png" alt="image-20230615234345597" style="zoom:67%;" /><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152344580.png" alt="image-20230615234401549" style="zoom:67%;" />为待设计的实矩阵</p>
+<p>由<em><strong>注3</strong></em> 确定<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152345405.png" alt="image-20230615234529373" style="zoom:67%;" />，<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306152346214.png" alt="image-20230615234612175" style="zoom:67%;" />为任意矩阵</p>
+<p><strong>注4</strong>：由假设1知，只考虑<strong>影响属于驱动空间</strong>的故障，即***span(B)<em><strong>，表示由</strong>B的列</em>*张成的向量空间。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306160005333.png" alt="image-20230616000515302" style="zoom:67%;" />意味着存在矩阵<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306160006696.png" alt="image-20230616000644661" style="zoom:67%;" />使得<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306160007025.png" alt="image-20230616000707982" style="zoom:67%;" /></p>
+<p>并且，条件<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161302724.png" alt="image-20230616130242633" style="zoom:67%;" />还表示存在一个非零矩阵<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161303537.png" alt="image-20230616130312497" style="zoom:67%;" />，使得<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161303306.png" alt="image-20230616130336264" style="zoom:67%;" />。由于<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161307642.png" alt="image-20230616130740603" style="zoom:67%;" />，则<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161308385.png" alt="image-20230616130803349" style="zoom:67%;" />，其中<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161308205.png" alt="image-20230616130824162" style="zoom:67%;" /><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161309298.png" alt="image-20230616130921253" style="zoom:67%;" />，是<em><strong>B</strong></em> 的<em><strong>moore - penrose</strong></em> <strong>广义逆矩阵</strong>，则<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161311793.png" alt="image-20230616131108744" style="zoom:67%;" />，满足式(25)。因此，选择<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161311880.png" alt="image-20230616131142828" style="zoom:67%;" />，即<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161312254.png" alt="image-20230616131210206" style="zoom:67%;" />，则有<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161312614.png" alt="image-20230616131232565" style="zoom:67%;" /><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161312326.png" alt="image-20230616131250276" style="zoom:67%;" /></p>
+<p>由(21)与(24)：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161314135.png" alt="image-20230616131442100" style="zoom:67%;" />
+
+<p>对于理想准滑模，有：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161320051.png" alt="image-20230616132046013" style="zoom:67%;" />
+
+<p>由此可得等效控制律为：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161322681.png" alt="image-20230616132254653" style="zoom:67%;" />
+
+<p>将(28)代入(22)，使<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161324066.png" alt="image-20230616132435029" style="zoom:67%;" />，滑模动力学：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161325078.png" alt="image-20230616132518047" style="zoom:67%;" />
+
+<p>由于滑模运动(26)的稳定性分析与观测器状态<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161327198.png" alt="image-20230616132719163" style="zoom:67%;" />的动力学有关，因此我们将分析由状态<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161329142.png" alt="image-20230616132901111" style="zoom:67%;" />组成的整体 <em><strong>NCS</strong></em> (网络控制系统)的<strong>稳定性</strong>和 <em><strong>H∞</strong></em> 性能，而非单独分析滑模动力学(29)的稳定性。所得的总体NCS如式(30)所示。</p>
+<h4 id="H∞-性能分析"><a href="#H∞-性能分析" class="headerlink" title="H∞ 性能分析"></a><em>H∞</em> 性能分析</h4><p>本节分析整个 <em><strong>NCS</strong></em> 的稳定性和 <em><strong>H∞</strong></em> 性能。</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161332247.png" alt="image-20230616133235216" style="zoom:67%;" />
+
+<p>由(23)和(29)，增广系统可表述为:</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161333069.png" alt="image-20230616133356013" style="zoom:67%;" />
+
+<p>其中，<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161556167.png" alt="image-20230616155626128" style="zoom:67%;" /></p>
+<p>基于<strong>lemma 1</strong>，存在有界函数<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161557121.png" alt="image-20230616155729088" style="zoom:67%;" />和常数<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161557987.png" alt="image-20230616155749952" style="zoom:67%;" />有：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161558240.png" alt="image-20230616155823192" style="zoom:67%;" />
+
+<p>为<strong>简化</strong>起见，引入以下符号：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161559965.png" alt="image-20230616155922928" style="zoom:67%;" /> 
+
+<p>因此，增广系统(30)可以重新表述为：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161600086.png" alt="image-20230616160025048" style="zoom:67%;" /> 
+
+<p>根据<strong>lemma 1</strong>，矩阵参数<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161601603.png" alt="image-20230616160127570" style="zoom:67%;" />有界，它们属于有界凸集<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161602306.png" alt="image-20230616160209273" style="zoom:67%;" />，其顶点集由<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161602743.png" alt="image-20230616160257705" style="zoom:67%;" />定义</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161604899.png" alt="image-20230616160451864" style="zoom:67%;" />表示<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161607896.png" alt="image-20230616160754859" style="zoom:67%;" />中对应于有界凸集<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161607633.png" alt="image-20230616160725599" style="zoom:67%;" />的顶点。</p>
+<p>增广系统(33)可以表示图1中离散时间非线性NCS的整体动力学。因此，集成设计问题可以表述为: 给定系统(33)受到外部干扰和执行器故障，要求同时设计<strong>滑模增益<em>K</em></strong>、<strong>观测器增益<em>L、F</em></strong> 和**事件触发参数<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161615501.png" alt="image-20230616161526458" style="zoom:67%;" />**，使得</p>
+<p>(1). 当<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161620864.png" alt="image-20230616162041823" style="zoom:67%;" />时增广系统(33)稳定；</p>
+<p>(2). 对于给定正标量<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161621802.png" alt="image-20230616162158768" style="zoom:67%;" />且<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161622359.png" alt="image-20230616162222322" style="zoom:67%;" />，在零初始条件下，满足以下 <em><strong>H∞</strong></em> 性能条件:</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161623166.png" alt="image-20230616162320053" style="zoom:67%;" />
+
+<p>首先，在<strong>Theorem 1</strong>中给出<strong>了稳定性判据和 <em>H∞</em> 性能分析</strong>，假设增益矩阵 <em><strong>K、L</strong></em> 和 <em><strong>F</strong></em> 已知。</p>
+<p> <strong>Theorem 1</strong>：给定标量<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161632933.png" alt="image-20230616163228899" style="zoom:67%;" />和(21)中的矩阵<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161632219.png" alt="image-20230616163252188" style="zoom:67%;" />、<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161633450.png" alt="image-20230616163311332" style="zoom:67%;" /><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161633671.png" alt="image-20230616163323627" style="zoom:67%;" />与(24)中的矩阵<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161634633.png" alt="image-20230616163446593" style="zoom:67%;" /></p>
+<p>增广系统(33)具有可保证的 <em><strong>H∞</strong></em> 性能指标<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161621802.png" alt="image-20230616162158768" style="zoom:67%;" />且稳定，如果存在正定对称矩阵：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161638729.png" alt="image-20230616163809699" style="zoom:67%;" />
+
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161638704.png" alt="image-20230616163841668" style="zoom:67%;" /> 
+
+<p>则有：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161635606.png" alt="image-20230616163553575" style="zoom:67%;" />
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161640309.png" alt="image-20230616164024276" style="zoom:67%;" />其中：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161641460.png" alt="image-20230616164124406" style="zoom:67%;" />  
+
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161644510.png" alt="image-20230616164425470" style="zoom:67%;" /> 
+
+<p><strong>证明：</strong></p>
+<p>选择以下 <em><strong>Lyapunov-Krasovskii</strong></em> 候选函数：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161646051.png" alt="image-20230616164650003" style="zoom:50%;" /> 
+
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161647328.png" alt="image-20230616164740291" style="zoom:67%;" />
+
+<p>简化：定义以下增广向量来表示<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161648556.png" alt="image-20230616164839521" style="zoom:67%;" />的上界:</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161653209.png" alt="image-20230616165311164" style="zoom:50%;" />
+
+<p>定义<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161654311.png" alt="image-20230616165421275" style="zoom:67%;" />，有：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161656330.png" alt="image-20230616165603270" style="zoom:67%;" /> 
+
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161659284.png" alt="image-20230616165917245" style="zoom:67%;" /> 
+
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161659990.png" alt="image-20230616165934957" style="zoom: 67%;" /> 
+
+<p>将<em><strong>Lemma 2</strong></em> 应用于式(43)的第二项和最后一项:</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161701287.png" alt="image-20230616170113227" style="zoom:67%;" />
+
+<p>其中<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161701632.png" alt="image-20230616170148593" style="zoom:67%;" /></p>
+<p>注意到<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161702613.png" alt="image-20230616170246581" style="zoom:67%;" />，因此<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161703307.png" alt="image-20230616170312271" style="zoom:67%;" />。</p>
+<p>根据<em><strong>Lemma 3</strong></em> ，如果存在一个矩阵 <em><strong>S</strong></em> 使得：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161704420.png" alt="image-20230616170433378" style="zoom:67%;" /> 
+
+<p>则有：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161704550.png" alt="image-20230616170459494" style="zoom:67%;" /> 
+
+<p>由此可得(45)式的上界</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161706606.png" alt="image-20230616170645544" style="zoom:67%;" /> 
+
+<p>另一方面，对于任意具有适当维数的矩阵<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161707589.png" alt="image-20230616170742554" style="zoom:67%;" />，有：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161708175.png" alt="image-20230616170814138" style="zoom:67%;" />
+
+<p>首先分析 <em><strong>H∞</strong></em> 性能，并定义如下指标：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161935985.png" alt="image-20230616193519948" style="zoom:67%;" />
+
+<p>将(49)加入<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161938777.png" alt="image-20230616193808752" style="zoom:67%;" />，结合(41)、(42)、(47)和(48)：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161939101.png" alt="image-20230616193929063" style="zoom:67%;" />
+
+<p>由于矩阵<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161940994.png" alt="image-20230616194020965" style="zoom:67%;" />对时滞<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161940514.png" alt="image-20230616194046479" style="zoom:67%;" />是仿射的，所以当且仅当<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161941296.png" alt="image-20230616194115255" style="zoom:67%;" />时，<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161941166.png" alt="image-20230616194143129" style="zoom:67%;" />。因此，若条件(35)与(36)满足：</p>
+<img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/yan0/202306161942369.png" alt="image-20230616194244340" style="zoom:67%;" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="仿真结果"><a href="#仿真结果" class="headerlink" title="仿真结果"></a>仿真结果</h2><h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>本文研究了具有<strong>执行器故障和外部干扰</strong>的离散时间 <em><strong>Lipschitz</strong></em> 非线性<em><strong>NCSs</strong></em> 的<strong>事件触发故障估计和滑模容错控制集成设计</strong>问题。首先，设计了<strong>事件触发状态&#x2F;故障观测器</strong>来同时估计系统状态和执行器故障，然后便于在状态估计空间中设计<strong>离散时间滑动面函数</strong>。通过<strong>重新定义的 <em>Lipschitz</em> 性质和延迟系统分析方法</strong>，将闭环系统转化为包含网络诱导延迟、事件触发方案和 <em><strong>SMC</strong></em> 方法影响的<em><strong>LPV</strong></em> 网络控制系统。然后，基于<em><strong>Lyapunov-Krasovskii</strong></em> 泛函方法，导出了保证<em><strong>LPV</strong></em>  系统稳定并具有规定<em><strong>H∞</strong></em> 性能的时滞相关稳定性条件。在此基础上，合成了一种基于观测的滑模容错控制器，以保证滑模的可达性。最后，通过仿真实验验证了所提方法的有效性。在未来，我们可以将该方法推广到离散非线性网络控制系统的输出跟踪控制问题。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://pqueen.top">ap</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://pqueen.top/2023/06/14/2023-6-14-Event-triggered-fault-estimation-and-sliding-mode-fault-tolerant-control-for-a-class-of-nonlinear-networked-co/">http://pqueen.top/2023/06/14/2023-6-14-Event-triggered-fault-estimation-and-sliding-mode-fault-tolerant-control-for-a-class-of-nonlinear-networked-co/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://pqueen.top" target="_blank">ap的小站🥝</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%A0%940%E6%9A%91%E6%9C%9F/">研0暑期</a></div><div class="post_share"><div class="social-share" data-image="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/img/f6.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/06/17/2023-6-17-Robust-H%E2%88%9E-control-for-delayed-systems-with-randomly-varying-nonlinearities-under-uncertain-occurrence-probabil/" title="Robust H∞ control for delayed systems with randomly varying nonlinearities under uncertain occurrence probability via sliding mode methodcontrol systems"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/img/f9.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Robust H∞ control for delayed systems with randomly varying nonlinearities under uncertain occurrence probability via sliding mode methodcontrol systems</div></div></a></div><div class="next-post pull-right"><a href="/2023/06/13/2023-6-13-Design-of-Sliding-Mode-Control-Subject-to-Packet-Losses/" title="Design of Sliding Mode Control Subject to Packet Losses"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/img/f7.webp" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Design of Sliding Mode Control Subject to Packet Losses</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/06/01/2023-5-26-no1/" title="基于异步IMM融合滤波的网络化系统故障诊断"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/img/f5.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-01</div><div class="title">基于异步IMM融合滤波的网络化系统故障诊断</div></div></a></div><div><a href="/2023/06/11/2023-6-11-Replay-Attack-Detection-Based-on-Parity-Space-Method-for-Cyber-Physical-Systems/" title="Replay Attack Detection Based on Parity Space Method for Cyber-Physical Systems"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/img/f10.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-11</div><div class="title">Replay Attack Detection Based on Parity Space Method for Cyber-Physical Systems</div></div></a></div><div><a href="/2023/06/13/2023-6-13-Design-of-Sliding-Mode-Control-Subject-to-Packet-Losses/" title="Design of Sliding Mode Control Subject to Packet Losses"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/img/f7.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-13</div><div class="title">Design of Sliding Mode Control Subject to Packet Losses</div></div></a></div><div><a href="/2023/06/07/2023-6-2-Event-Triggered-Fault-Detection-and-Diagnosis-for-Networked-Systems-With-Sensor-and-Actuator-Faults/" title="Event-Triggered Fault Detection and Diagnosis for Networked Systems With Sensor and Actuator Faults"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/img/f9.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-07</div><div class="title">Event-Triggered Fault Detection and Diagnosis for Networked Systems With Sensor and Actuator Faults</div></div></a></div><div><a href="/2023/06/02/2023-6-2-Intermittent-Fault-Detection-for-Uncertain-Networked-Systems/" title="Intermittent Fault Detection for Uncertain Networked Systems"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/img/f1.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-02</div><div class="title">Intermittent Fault Detection for Uncertain Networked Systems</div></div></a></div><div><a href="/2023/06/20/2023-6-17-Observer-based-sliding-mode-control-for-fuzzy-stochastic-switching-systems-with-deception-attacks/" title="Observer-based sliding mode control for fuzzy stochastic switching systems with deception attacks"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://blog-1318446803.cos.ap-nanjing.myqcloud.com/img/f8.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-06-20</div><div class="title">Observer-based sliding mode control for fuzzy stochastic switching systems with deception attacks</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/images/a.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">ap</div><div class="author-info__description">不可言说</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">16</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/pqueen-j"><i></i><span>🛴前往小家...</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/pqueen-j" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:pengsijie_2001@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">ap的小站</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%E7%B1%BB%E9%9D%9E%E7%BA%BF%E6%80%A7%E7%BD%91%E7%BB%9C%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BA%8B%E4%BB%B6%E8%A7%A6%E5%8F%91%E6%95%85%E9%9A%9C%E4%BC%B0%E8%AE%A1%E4%B8%8E%E6%BB%91%E6%A8%A1%E5%AE%B9%E9%94%99%E6%8E%A7%E5%88%B6"><span class="toc-text">一类非线性网络控制系统的事件触发故障估计与滑模容错控制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%91%98%E8%A6%81"><span class="toc-text">摘要</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%9E%84%E5%BB%BA"><span class="toc-text">问题构建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B"><span class="toc-text">模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E6%A3%80%E6%B5%8B%E5%99%A8"><span class="toc-text">事件检测器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E4%B8%8EZOH"><span class="toc-text">网络与ZOH</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E7%BB%93%E6%9E%9C"><span class="toc-text">主要结果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%85%E9%9A%9C-x2F-%E7%8A%B6%E6%80%81%E8%A7%82%E6%B5%8B%E5%99%A8%E8%AE%BE%E8%AE%A1"><span class="toc-text">故障&#x2F;状态观测器设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%BB%91%E5%8A%A8%E9%9D%A2%E8%AE%BE%E8%AE%A1"><span class="toc-text">滑动面设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#H%E2%88%9E-%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90"><span class="toc-text">H∞ 性能分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BF%E7%9C%9F%E7%BB%93%E6%9E%9C"><span class="toc-text">仿真结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-text">结论</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 By ap</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="45" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
